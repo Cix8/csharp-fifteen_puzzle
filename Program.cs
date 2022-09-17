@@ -70,7 +70,9 @@ void InitGame(int[] grid)
     int zeroIndex = Array.IndexOf(grid, 0);
     int numbIndex = Array.IndexOf(grid, numbToMove);
 
-    if (zeroIndex - 4 == numbIndex || zeroIndex + 4 == numbIndex || (zeroIndex + 1 == numbIndex && numbIndex != 3 && numbIndex != 7 && numbIndex != 11 ) || (zeroIndex - 1 == numbIndex && numbIndex != 4 && numbIndex != 7 && numbIndex != 11))
+    if (zeroIndex - 4 == numbIndex || zeroIndex + 4 == numbIndex || 
+        (zeroIndex + 1 == numbIndex && numbIndex != 3 && numbIndex != 7 && numbIndex != 11 ) || 
+        (zeroIndex - 1 == numbIndex && numbIndex != 4 && numbIndex != 7 && numbIndex != 11))
     {
         grid[zeroIndex] = numbToMove;
         grid[numbIndex] = 0;
@@ -98,6 +100,7 @@ do
         } else
         {
             youWin = false;
+            break;
         }
     }
 
